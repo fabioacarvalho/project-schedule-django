@@ -17,6 +17,8 @@ class Contato(models.Model):
     data_criacao = models.DateTimeField(default=timezone.now)
     describe = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING) #Relação entre a class Contato e Categoria
+    mostra = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.nome
