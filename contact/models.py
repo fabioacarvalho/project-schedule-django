@@ -18,6 +18,7 @@ class Contato(models.Model):
     describe = models.TextField(blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING) #Relação entre a class Contato e Categoria
     mostra = models.BooleanField(default=True)
+    foto = models.ImageField(blank=True, upload_to='fotos/%Y/%m/%d')
 
 
     def __str__(self):
