@@ -21,6 +21,9 @@
             <div class="form-group row">
               <div class="col-12">
                 <input type="search" class="form-control" value="{{ request.GET.termo }}" id="search-input" placeholder="Digite sua pesquisa" name="termo">
+
+                {% include 'parciais/_messages.html' %}
+
               </div>
             </div>
           </form>
