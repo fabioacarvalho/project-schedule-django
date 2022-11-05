@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+    <h1 class="mt-3 mb-3">Cadastro</h1>
+
+    <form method="POST" action="{% url 'cadastro' %}">
+        {% include 'parciais/_messages.html' %}
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nome:</label>
+            <input type="text" class="form-control" name="nome" value="{{ request.POST.nome }}" placeholder="Coloque seu nome">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Sobrenome:</label>
+            <input type="text" class="form-control" name="sobrenome" value="{{ request.POST.sobrenome }}" placeholder="Coloque seu sobrenome">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Usuário:</label>
+            <input type="text" class="form-control" name="usuario" value="{{ request.POST.usuario }}" placeholder="Coloque seu usuário">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email:</label>
+            <input type="email" class="form-control" name="email" value="{{ request.POST.email }}" placeholder="Coloque seu email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Senha:</label>
+            <input type="password" class="form-control" name="senha" placeholder="Coleque sua senha">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Repita sua senha:</label>
+            <input type="password" class="form-control" name="senha2" placeholder="Repita sua senha">
+        </div>
+        <button type="submit" class="btn btn-primary" name="btn_cadastrar">Cadastrar</button>
+    </form>
+
+{% endblock %}

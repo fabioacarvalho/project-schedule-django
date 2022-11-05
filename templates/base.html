@@ -16,17 +16,19 @@
     <div class="row">
         <div class="col-lg-12">
 
-          <br>
-          <form method="get" action="{% url 'busca' %}">
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="search" class="form-control" value="{{ request.GET.termo }}" id="search-input" placeholder="Digite sua pesquisa" name="termo">
+          {% if 'accounts' not in request.path %}
+            <br>
+            <form method="get" action="{% url 'busca' %}">
+              <div class="form-group row">
+                <div class="col-12">
+                  <input type="search" class="form-control" value="{{ request.GET.termo }}" id="search-input" placeholder="Digite sua pesquisa" name="termo">
 
-                {% include 'parciais/_messages.html' %}
+                  {% include 'parciais/_messages.html' %}
 
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          {% endif %}
 
           {% block conteudo %} {% endblock %}
         </div>
