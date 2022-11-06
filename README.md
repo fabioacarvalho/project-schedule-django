@@ -10,4 +10,4 @@
 <br>
 <img src="https://github.com/fabioacarvalho/project-schedule-django/blob/main/img/contato.png?raw=true" >
 <br>
-<img src="img/dash.PNG">
+<img src="https://github.com/fabioacarvalho/project-schedule-django/blob/main/img/dash.png?raw=true">
