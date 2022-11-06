@@ -5,7 +5,9 @@ from django.http import Http404
 from django.db.models import Q, Value
 from django.db.models.functions import Concat
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
+@login_required(redirect_field_name='login')
 def index(request):
     # contatos = Contato.objects.all()
     contatos = Contato.objects.order_by('-id').filter(
@@ -20,6 +22,7 @@ def index(request):
         'contatos': contatos #vai conter todos os dados
     })
 
+@login_required(redirect_field_name='login')
 def ver_contato(request, contato_id):
     #contato = Contato.objects.get(id=contato_id)
     contato = get_object_or_404(Contato, id=contato_id)
