@@ -1,5 +1,5 @@
 # project-schedule-django
- Project of schedule with python and django
+ Project of schedule with python, django and Bootstarp.
 
 <img src="https://github.com/fabioacarvalho/project-schedule-django/blob/main/img/login.png?raw=true">
 
