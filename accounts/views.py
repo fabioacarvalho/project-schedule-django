@@ -4,6 +4,7 @@ from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import FormContato
+from contact.models import Contato
 
 def login(request):
     #Se nada for postado:
@@ -92,6 +93,7 @@ def cadastro(request):
 
 @login_required(redirect_field_name='login')
 def dashboard(request):
+
     if request.method != 'POST':
         form = FormContato()
         return render(request, 'accounts/dashboard.html', { 'form': form })
