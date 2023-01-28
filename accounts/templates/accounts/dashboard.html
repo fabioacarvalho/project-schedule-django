@@ -2,6 +2,11 @@
 {% block titulo %}Dashboard de {{ user }} | {% endblock %}
 
 {% block conteudo %}
+    <style>
+        .btns {
+            display: flex;
+        }
+    </style>
     <h1 class="mt-3 mb-3">Olá bem vindo {{ user.first_name }} {{ user.last_name }} </h1>
     
     {% include 'parciais/_messages.html' %}
